@@ -1,0 +1,3 @@
+[submodule "sipXrouter"]
+	path = sipXrouter
+	url = https://github.com/sipfoundrydev/sipXrouter

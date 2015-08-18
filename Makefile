@@ -78,11 +78,11 @@ prepare-repo:
 	echo "name=sipXecs custom packages for CentOS releasever - basearch" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "baseurl=file:///WWWROOT/sipxecs/15.06-stage/externals/CentOS_6/x86_64" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "gpgcheck=0" >> /etc/yum.repos.d/sipxecs.repo; \
-	echo "" >> /etc/yum.repos.d/sipxecs.repo; \
+	echo "" >> /etc/yum.repos.d/sipxecs.repo;
 
 									
 									
 docker-build-local:
 	docker pull sipfoundrydev/sipx-docker-base-libs; \
-	docker run -t -p 80 --rm --name sipx-router-builder  -v `pwd`:/BUILD -v ${WWWROOT}:/WWWROOT sipfoundrydev/sipx-docker-base-libs \
+	docker run -t --rm --name sipx-router-builder  -v `pwd`:/BUILD -v ${WWWROOT}:/WWWROOT sipfoundrydev/sipx-docker-base-libs \
 	/bin/sh -c "cd /BUILD && make prepare-repo && yum update -y && make"

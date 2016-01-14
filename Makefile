@@ -19,7 +19,8 @@ MODULES = \
 	oss_core \
 	sipXproxy \
 	sipXpublisher \
-	sipXregistry
+	sipXregistry \
+	sipXkamailio
 
 
 all: rpm
